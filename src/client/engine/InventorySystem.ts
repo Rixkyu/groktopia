@@ -158,6 +158,51 @@ export class InventorySystem {
     return this.slots.length < this.maxSlots;
   }
 
+  public addItem(itemId: number, count = 1): boolean {
+    if (itemId === 0 || count <= 0) return false;
+    const existing = this.slots.find((s) => s.itemId === itemId);
+    if (existing && existing.count + count <= MAX_STACK) {
+      existing.count += count;
+      this.emitChange();
+      return true;
+    }
+    if (this.slots.length < this.maxSlots) {
+      this.slots.push({ itemId, count });
+      this.emitChange();
+      return true;
+    }
+    return false;
+  }
+
+  public removeItem(itemId: number, count = 1): boolean {
+    if (count <= 0) return false;
+    const idx = this.slots.findIndex((s) => s.itemId === itemId);
+    if (idx === -1 || this.slots[idx].count < count) return false;
+    this.slots[idx].count -= count;
+    if (this.slots[idx].count <= 0) {
+      this.slots.splice(idx, 1);
+      for (const key of ['hat', 'face', 'back', 'hand'] as const) {
+        if (this.equipped[key] === itemId) {
+          delete this.equipped[key];
+        }
+      }
+    }
+    this.emitChange();
+    return true;
+  }
+
+  public toggleEquip(itemId: number): void {
+    const def = getItemDef(itemId);
+    if (!def || def.category !== 'clothing' || !def.equipSlot) return;
+    const slot = def.equipSlot;
+    if (this.equipped[slot] === itemId) {
+      delete this.equipped[slot];
+    } else {
+      this.equipped[slot] = itemId;
+    }
+    this.emitChange();
+  }
+
   public hasDoubleJump(): boolean {
     if (!this.equipped.back) return false;
     return !!getItemDef(this.equipped.back)?.grantsDoubleJump;

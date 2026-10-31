@@ -30,6 +30,7 @@ export type ModalType =
 
 export interface UICallbacks {
   onLoginSubmit: (username: string, password: string, skinColor: string) => Promise<string | null>;
+  onPlayOffline: (username: string, skinColor: string) => void;
   onRefreshWorlds: () => Promise<WorldSummary[]>;
   onSelectWorld: (worldName: string) => Promise<string | null>;
   onLogout: () => void;
@@ -311,8 +312,11 @@ export class UIManager {
           </div>
 
           <div style="display:flex;gap:8px;margin-top:14px;">
-            <button id="btn-play-online" class="gt-btn gt-btn-green" style="flex:1;padding:8px 14px;font-size:17px;">
+            <button id="btn-play-online" class="gt-btn gt-btn-green" style="flex:1;padding:8px 14px;font-size:16px;">
               Connect
+            </button>
+            <button id="btn-play-offline" class="gt-btn gt-btn-blue" style="flex:1.2;padding:8px 12px;font-size:16px;">
+              Play Offline (Sandbox)
             </button>
           </div>
 
@@ -338,7 +342,7 @@ export class UIManager {
       })
       .catch(() => {
         const el = document.getElementById('server-status-text');
-        if (el) el.textContent = 'Server Ready to Connect';
+        if (el) el.textContent = 'Server Offline • Klik "Play Offline (Sandbox)" untuk main langsung!';
       });
 
     this.root.querySelectorAll('.skin-swatch').forEach((el) => {
@@ -368,11 +372,18 @@ export class UIManager {
       btn.textContent = 'Connecting...';
       const err = await this.callbacks.onLoginSubmit(uname, pw, this.selectedSkin);
       if (err) {
-        this.showLoginScreen(err);
+        this.showLoginScreen('WebSocket Error: Server belum aktif. Klik "Play Offline (Sandbox)" untuk main langsung!');
       }
     };
 
     document.getElementById('btn-play-online')?.addEventListener('click', submitLogin);
+    document.getElementById('btn-play-offline')?.addEventListener('click', () => {
+      this.audio.unlock();
+      this.audio.play('ui');
+      const nameInput = document.getElementById('login-growid') as HTMLInputElement | null;
+      const uname = nameInput ? nameInput.value.trim() : '';
+      this.callbacks.onPlayOffline(uname || 'Growtopian', this.selectedSkin);
+    });
     document.getElementById('login-growid')?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') submitLogin();
     });
