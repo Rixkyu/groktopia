@@ -1,0 +1,982 @@
+{
+  "game/tiles_page3.png": {
+    "outRel": "game/tiles_page3.png",
+    "srcPath": "game/tiles_page3.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/pickup_box.png": {
+    "outRel": "game/pickup_box.png",
+    "srcPath": "game/pickup_box.rttex",
+    "width": 256,
+    "height": 32,
+    "originalWidth": 256,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/seed.png": {
+    "outRel": "game/seed.png",
+    "srcPath": "game/seed.rttex",
+    "width": 256,
+    "height": 32,
+    "originalWidth": 256,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tile_grid_overlay.png": {
+    "outRel": "game/tile_grid_overlay.png",
+    "srcPath": "game/tile_grid_overlay.rttex",
+    "width": 256,
+    "height": 32,
+    "originalWidth": 160,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/sun.png": {
+    "outRel": "game/sun.png",
+    "srcPath": "game/sun.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 161,
+    "originalHeight": 159,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page2.png": {
+    "outRel": "game/tiles_page2.png",
+    "srcPath": "game/tiles_page2.rttex",
+    "width": 1024,
+    "height": 1024,
+    "originalWidth": 1024,
+    "originalHeight": 1024,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/particles.png": {
+    "outRel": "game/particles.png",
+    "srcPath": "game/particles.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page1.png": {
+    "outRel": "game/tiles_page1.png",
+    "srcPath": "game/tiles_page1.rttex",
+    "width": 1024,
+    "height": 1024,
+    "originalWidth": 1024,
+    "originalHeight": 1024,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/hills3.png": {
+    "outRel": "game/hills3.png",
+    "srcPath": "game/hills3.rttex",
+    "width": 512,
+    "height": 256,
+    "originalWidth": 512,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/city_skyline.png": {
+    "outRel": "game/city_skyline.png",
+    "srcPath": "game/city_skyline.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/cloud.png": {
+    "outRel": "game/cloud.png",
+    "srcPath": "game/cloud.rttex",
+    "width": 256,
+    "height": 128,
+    "originalWidth": 197,
+    "originalHeight": 111,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/desert_sky.png": {
+    "outRel": "game/desert_sky.png",
+    "srcPath": "game/desert_sky.rttex",
+    "width": 32,
+    "height": 32,
+    "originalWidth": 32,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/city_sky.png": {
+    "outRel": "game/city_sky.png",
+    "srcPath": "game/city_sky.rttex",
+    "width": 8,
+    "height": 64,
+    "originalWidth": 8,
+    "originalHeight": 64,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/hills1.png": {
+    "outRel": "game/hills1.png",
+    "srcPath": "game/hills1.rttex",
+    "width": 512,
+    "height": 128,
+    "originalWidth": 512,
+    "originalHeight": 128,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/hills2.png": {
+    "outRel": "game/hills2.png",
+    "srcPath": "game/hills2.rttex",
+    "width": 512,
+    "height": 256,
+    "originalWidth": 512,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/desert_hills2.png": {
+    "outRel": "game/desert_hills2.png",
+    "srcPath": "game/desert_hills2.rttex",
+    "width": 512,
+    "height": 256,
+    "originalWidth": 512,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/moon.png": {
+    "outRel": "game/moon.png",
+    "srcPath": "game/moon.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 161,
+    "originalHeight": 159,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/stars.png": {
+    "outRel": "game/stars.png",
+    "srcPath": "game/stars.rttex",
+    "width": 64,
+    "height": 64,
+    "originalWidth": 64,
+    "originalHeight": 64,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_arm.png": {
+    "outRel": "game/player_arm.png",
+    "srcPath": "game/player_arm.rttex",
+    "width": 8,
+    "height": 16,
+    "originalWidth": 6,
+    "originalHeight": 10,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_eyes.png": {
+    "outRel": "game/player_eyes.png",
+    "srcPath": "game/player_eyes.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/bg_EC_sky.png": {
+    "outRel": "game/bg_EC_sky.png",
+    "srcPath": "game/bg_EC_sky.rttex",
+    "width": 32,
+    "height": 32,
+    "originalWidth": 32,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_head.png": {
+    "outRel": "game/player_head.png",
+    "srcPath": "game/player_head.rttex",
+    "width": 128,
+    "height": 64,
+    "originalWidth": 128,
+    "originalHeight": 64,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/city2_skyline.png": {
+    "outRel": "game/city2_skyline.png",
+    "srcPath": "game/city2_skyline.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_face.png": {
+    "outRel": "game/player_face.png",
+    "srcPath": "game/player_face.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_pants.png": {
+    "outRel": "game/player_pants.png",
+    "srcPath": "game/player_pants.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_puncharm.png": {
+    "outRel": "game/player_puncharm.png",
+    "srcPath": "game/player_puncharm.rttex",
+    "width": 256,
+    "height": 64,
+    "originalWidth": 200,
+    "originalHeight": 48,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_shirt.png": {
+    "outRel": "game/player_shirt.png",
+    "srcPath": "game/player_shirt.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_feet.png": {
+    "outRel": "game/player_feet.png",
+    "srcPath": "game/player_feet.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_extraleg.png": {
+    "outRel": "game/player_extraleg.png",
+    "srcPath": "game/player_extraleg.rttex",
+    "width": 16,
+    "height": 16,
+    "originalWidth": 16,
+    "originalHeight": 16,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_sleeve.png": {
+    "outRel": "game/player_sleeve.png",
+    "srcPath": "game/player_sleeve.rttex",
+    "width": 128,
+    "height": 128,
+    "originalWidth": 128,
+    "originalHeight": 128,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_feet_icon.png": {
+    "outRel": "game/player_feet_icon.png",
+    "srcPath": "game/player_feet_icon.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hair.png": {
+    "outRel": "game/player_hair.png",
+    "srcPath": "game/player_hair.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_faceitem.png": {
+    "outRel": "game/player_faceitem.png",
+    "srcPath": "game/player_faceitem.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hair4_icon.png": {
+    "outRel": "game/player_hair4_icon.png",
+    "srcPath": "game/player_hair4_icon.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_handitem.png": {
+    "outRel": "game/player_handitem.png",
+    "srcPath": "game/player_handitem.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hair3.png": {
+    "outRel": "game/player_hair3.png",
+    "srcPath": "game/player_hair3.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hairhair2.png": {
+    "outRel": "game/player_hairhair2.png",
+    "srcPath": "game/player_hairhair2.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hairhair.png": {
+    "outRel": "game/player_hairhair.png",
+    "srcPath": "game/player_hairhair.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hair3_icon.png": {
+    "outRel": "game/player_hair3_icon.png",
+    "srcPath": "game/player_hair3_icon.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hair4.png": {
+    "outRel": "game/player_hair4.png",
+    "srcPath": "game/player_hair4.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_back.png": {
+    "outRel": "game/player_back.png",
+    "srcPath": "game/player_back.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/gui_box_glow_yellow.png": {
+    "outRel": "ui/gui_box_glow_yellow.png",
+    "srcPath": "game/gui_box_glow_yellow.rttex",
+    "width": 32,
+    "height": 32,
+    "originalWidth": 32,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/gui_box_upwhite.png": {
+    "outRel": "ui/gui_box_upwhite.png",
+    "srcPath": "game/gui_box_upwhite.rttex",
+    "width": 32,
+    "height": 32,
+    "originalWidth": 32,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_longhanditem1.png": {
+    "outRel": "game/player_longhanditem1.png",
+    "srcPath": "game/player_longhanditem1.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/gui_box.png": {
+    "outRel": "ui/gui_box.png",
+    "srcPath": "game/gui_box.rttex",
+    "width": 32,
+    "height": 32,
+    "originalWidth": 32,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_handitem_icon.png": {
+    "outRel": "game/player_handitem_icon.png",
+    "srcPath": "game/player_handitem_icon.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_back2.png": {
+    "outRel": "game/player_back2.png",
+    "srcPath": "game/player_back2.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_longhanditem1_icon.png": {
+    "outRel": "game/player_longhanditem1_icon.png",
+    "srcPath": "game/player_longhanditem1_icon.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/gui_itembox.png": {
+    "outRel": "ui/gui_itembox.png",
+    "srcPath": "game/gui_itembox.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/gui_box_white.png": {
+    "outRel": "ui/gui_box_white.png",
+    "srcPath": "game/gui_box_white.rttex",
+    "width": 32,
+    "height": 32,
+    "originalWidth": 32,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/handle_big.png": {
+    "outRel": "ui/handle_big.png",
+    "srcPath": "interface/handle_big.rttex",
+    "width": 128,
+    "height": 64,
+    "originalWidth": 128,
+    "originalHeight": 64,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/handle_horizontal.png": {
+    "outRel": "ui/handle_horizontal.png",
+    "srcPath": "interface/handle_horizontal.rttex",
+    "width": 128,
+    "height": 32,
+    "originalWidth": 88,
+    "originalHeight": 25,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/inv_select.png": {
+    "outRel": "ui/inv_select.png",
+    "srcPath": "game/inv_select.rttex",
+    "width": 64,
+    "height": 64,
+    "originalWidth": 64,
+    "originalHeight": 64,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/handle_down.png": {
+    "outRel": "ui/handle_down.png",
+    "srcPath": "interface/handle_down.rttex",
+    "width": 128,
+    "height": 32,
+    "originalWidth": 112,
+    "originalHeight": 24,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/cash_icon_overlay.png": {
+    "outRel": "ui/cash_icon_overlay.png",
+    "srcPath": "interface/cash_icon_overlay.rttex",
+    "width": 32,
+    "height": 32,
+    "originalWidth": 32,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/handle_up.png": {
+    "outRel": "ui/handle_up.png",
+    "srcPath": "interface/handle_up.rttex",
+    "width": 128,
+    "height": 32,
+    "originalWidth": 112,
+    "originalHeight": 24,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/checkbox.png": {
+    "outRel": "ui/checkbox.png",
+    "srcPath": "interface/checkbox.rttex",
+    "width": 64,
+    "height": 32,
+    "originalWidth": 64,
+    "originalHeight": 32,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/atomic_button.png": {
+    "outRel": "ui/atomic_button.png",
+    "srcPath": "interface/atomic_button.rttex",
+    "width": 64,
+    "height": 64,
+    "originalWidth": 64,
+    "originalHeight": 64,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/cross.png": {
+    "outRel": "ui/cross.png",
+    "srcPath": "interface/cross.rttex",
+    "width": 64,
+    "height": 64,
+    "originalWidth": 45,
+    "originalHeight": 45,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/main_menu_bg.png": {
+    "outRel": "ui/main_menu_bg.png",
+    "srcPath": "interface/large/main_menu_bg.rttex",
+    "width": 2048,
+    "height": 1024,
+    "originalWidth": 2048,
+    "originalHeight": 878,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/slider_button.png": {
+    "outRel": "ui/slider_button.png",
+    "srcPath": "interface/slider_button.rttex",
+    "width": 64,
+    "height": 64,
+    "originalWidth": 43,
+    "originalHeight": 43,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/menu_button.png": {
+    "outRel": "ui/menu_button.png",
+    "srcPath": "interface/large/menu_button.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 141,
+    "originalHeight": 138,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/generic_menu.png": {
+    "outRel": "ui/generic_menu.png",
+    "srcPath": "interface/large/generic_menu.rttex",
+    "width": 1024,
+    "height": 1024,
+    "originalWidth": 1024,
+    "originalHeight": 768,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/game_title.png": {
+    "outRel": "ui/game_title.png",
+    "srcPath": "interface/large/game_title.rttex",
+    "width": 1024,
+    "height": 512,
+    "originalWidth": 1024,
+    "originalHeight": 404,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/gui_store_button_overlays1.png": {
+    "outRel": "ui/gui_store_button_overlays1.png",
+    "srcPath": "interface/large/gui_store_button_overlays1.rttex",
+    "width": 512,
+    "height": 1024,
+    "originalWidth": 512,
+    "originalHeight": 1024,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/chat_button.png": {
+    "outRel": "ui/chat_button.png",
+    "srcPath": "interface/large/chat_button.rttex",
+    "width": 256,
+    "height": 128,
+    "originalWidth": 136,
+    "originalHeight": 106,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/skin_selected_marker.png": {
+    "outRel": "ui/skin_selected_marker.png",
+    "srcPath": "interface/large/skin_selected_marker.rttex",
+    "width": 128,
+    "height": 128,
+    "originalWidth": 102,
+    "originalHeight": 72,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/friend_button.png": {
+    "outRel": "ui/friend_button.png",
+    "srcPath": "interface/large/friend_button.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 141,
+    "originalHeight": 138,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/jump_icon.png": {
+    "outRel": "ui/jump_icon.png",
+    "srcPath": "interface/large/jump_icon.rttex",
+    "width": 128,
+    "height": 128,
+    "originalWidth": 101,
+    "originalHeight": 98,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/left_arrow.png": {
+    "outRel": "ui/left_arrow.png",
+    "srcPath": "interface/large/left_arrow.rttex",
+    "width": 256,
+    "height": 128,
+    "originalWidth": 135,
+    "originalHeight": 95,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/punch_icon.png": {
+    "outRel": "ui/punch_icon.png",
+    "srcPath": "interface/large/punch_icon.rttex",
+    "width": 128,
+    "height": 128,
+    "originalWidth": 100,
+    "originalHeight": 98,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/right_arrow.png": {
+    "outRel": "ui/right_arrow.png",
+    "srcPath": "interface/large/right_arrow.rttex",
+    "width": 256,
+    "height": 128,
+    "originalWidth": 135,
+    "originalHeight": 95,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "ui/store_buttons.png": {
+    "outRel": "ui/store_buttons.png",
+    "srcPath": "interface/large/store_buttons.rttex",
+    "width": 256,
+    "height": 128,
+    "originalWidth": 256,
+    "originalHeight": 128,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page4.png": {
+    "outRel": "game/tiles_page4.png",
+    "srcPath": "game/tiles_page4.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page6.png": {
+    "outRel": "game/tiles_page6.png",
+    "srcPath": "game/tiles_page6.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page7.png": {
+    "outRel": "game/tiles_page7.png",
+    "srcPath": "game/tiles_page7.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page8.png": {
+    "outRel": "game/tiles_page8.png",
+    "srcPath": "game/tiles_page8.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page5.png": {
+    "outRel": "game/tiles_page5.png",
+    "srcPath": "game/tiles_page5.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page12.png": {
+    "outRel": "game/tiles_page12.png",
+    "srcPath": "game/tiles_page12.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page11.png": {
+    "outRel": "game/tiles_page11.png",
+    "srcPath": "game/tiles_page11.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page10.png": {
+    "outRel": "game/tiles_page10.png",
+    "srcPath": "game/tiles_page10.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/tiles_page9.png": {
+    "outRel": "game/tiles_page9.png",
+    "srcPath": "game/tiles_page9.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/particles2.png": {
+    "outRel": "game/particles2.png",
+    "srcPath": "game/particles2.rttex",
+    "width": 512,
+    "height": 512,
+    "originalWidth": 512,
+    "originalHeight": 512,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_arm2.png": {
+    "outRel": "game/player_arm2.png",
+    "srcPath": "game/player_arm2.rttex",
+    "width": 8,
+    "height": 16,
+    "originalWidth": 6,
+    "originalHeight": 10,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_feet2.png": {
+    "outRel": "game/player_feet2.png",
+    "srcPath": "game/player_feet2.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_feet3.png": {
+    "outRel": "game/player_feet3.png",
+    "srcPath": "game/player_feet3.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_pants3.png": {
+    "outRel": "game/player_pants3.png",
+    "srcPath": "game/player_pants3.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_pants2.png": {
+    "outRel": "game/player_pants2.png",
+    "srcPath": "game/player_pants2.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_shirt2.png": {
+    "outRel": "game/player_shirt2.png",
+    "srcPath": "game/player_shirt2.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_shirt3.png": {
+    "outRel": "game/player_shirt3.png",
+    "srcPath": "game/player_shirt3.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_hair5.png": {
+    "outRel": "game/player_hair5.png",
+    "srcPath": "game/player_hair5.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_faceitem2.png": {
+    "outRel": "game/player_faceitem2.png",
+    "srcPath": "game/player_faceitem2.rttex",
+    "width": 128,
+    "height": 128,
+    "originalWidth": 128,
+    "originalHeight": 128,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_faceitem4.png": {
+    "outRel": "game/player_faceitem4.png",
+    "srcPath": "game/player_faceitem4.rttex",
+    "width": 128,
+    "height": 128,
+    "originalWidth": 128,
+    "originalHeight": 128,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_handitem2.png": {
+    "outRel": "game/player_handitem2.png",
+    "srcPath": "game/player_handitem2.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_handitem3.png": {
+    "outRel": "game/player_handitem3.png",
+    "srcPath": "game/player_handitem3.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_faceitem3.png": {
+    "outRel": "game/player_faceitem3.png",
+    "srcPath": "game/player_faceitem3.rttex",
+    "width": 128,
+    "height": 128,
+    "originalWidth": 128,
+    "originalHeight": 128,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_handitem4.png": {
+    "outRel": "game/player_handitem4.png",
+    "srcPath": "game/player_handitem4.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  },
+  "game/player_back3.png": {
+    "outRel": "game/player_back3.png",
+    "srcPath": "game/player_back3.rttex",
+    "width": 256,
+    "height": 256,
+    "originalWidth": 256,
+    "originalHeight": 256,
+    "format": 5121,
+    "usesAlpha": true
+  }
+}

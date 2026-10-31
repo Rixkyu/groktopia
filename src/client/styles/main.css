@@ -1,0 +1,934 @@
+@font-face {
+  font-family: 'CenturyGothicBold';
+  src: url('/assets/gt/fonts/century_gothic_bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --gt-font: 'CenturyGothicBold', 'Century Gothic', 'Trebuchet MS', sans-serif;
+  --gt-stroke:
+    -1.5px -1.5px 0 #06111c,
+     1.5px -1.5px 0 #06111c,
+    -1.5px  1.5px 0 #06111c,
+     1.5px  1.5px 0 #06111c,
+     0px    2px   3px rgba(0, 0, 0, 0.85);
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b2236;
+  font-family: var(--gt-font);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: var(--gt-stroke);
+}
+
+#game-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+#ui-root {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.pixel-icon {
+  width: 72%;
+  height: 72%;
+  image-rendering: pixelated;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(-1px 2px 0 rgba(0, 0, 0, 0.55));
+}
+
+/* --- AUTHENTIC 9-SLICE GROWTOPIA PANELS & BUTTONS (gui_box.png & gui_box_white.png) --- */
+.gt-panel {
+  pointer-events: auto;
+  background-color: rgba(14, 52, 82, 0.88);
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 8px 11px 11px 8px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 8px 11px 11px 8px stretch;
+  padding: 12px 14px;
+  image-rendering: pixelated;
+}
+
+.gt-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 6px 10px 6px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(158, 228, 255, 0.42);
+  font-size: 18px;
+  color: #fff394;
+}
+
+.gt-btn {
+  pointer-events: auto;
+  font-family: var(--gt-font);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: var(--gt-stroke);
+  background-color: rgba(34, 118, 168, 0.85);
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 7px 10px 10px 7px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 7px 10px 10px 7px stretch;
+  padding: 4px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: filter 0.08s ease, transform 0.06s ease;
+}
+
+.gt-btn:hover {
+  filter: brightness(1.14);
+}
+
+.gt-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+.gt-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.gt-btn-blue {
+  background-color: rgba(34, 118, 168, 0.85);
+}
+
+.gt-btn-green {
+  background-color: rgba(45, 179, 68, 0.92);
+  border-image: url('/assets/gt/ui/gui_box_white.png') 8 11 11 8 / 7px 10px 10px 7px stretch;
+}
+
+.gt-btn-amber {
+  background-color: rgba(219, 146, 26, 0.92);
+  border-image: url('/assets/gt/ui/gui_box_white.png') 8 11 11 8 / 7px 10px 10px 7px stretch;
+}
+
+.gt-btn-red {
+  background-color: rgba(204, 53, 53, 0.92);
+  border-image: url('/assets/gt/ui/gui_box_white.png') 8 11 11 8 / 7px 10px 10px 7px stretch;
+}
+
+.hud-btn-sm {
+  font-size: 13px;
+  padding: 2px 9px;
+}
+
+/* Official cross.png (45x45 inside 64x64 POT) Close Button */
+.gt-close-btn {
+  pointer-events: auto;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url('/assets/gt/ui/cross.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(100% * 64 / 45) calc(100% * 64 / 45);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+.gt-close-btn:hover {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
+
+.gt-close-btn:active {
+  transform: scale(0.95);
+}
+
+/* Official Top-Right Action Buttons */
+.gt-icon-btn {
+  pointer-events: auto;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+.gt-icon-btn:hover {
+  filter: brightness(1.12);
+  transform: scale(1.04);
+}
+
+.gt-icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* menu_button.png: orig 141x138 inside 256x256 */
+.gt-icon-menu {
+  width: 38px;
+  height: 37px;
+  background-image: url('/assets/gt/ui/menu_button.png');
+  background-size: calc(100% * 256 / 141) calc(100% * 256 / 138);
+}
+
+/* chat_button.png: orig 136x106 inside 256x128 */
+.gt-icon-chat {
+  width: 40px;
+  height: 31px;
+  background-image: url('/assets/gt/ui/chat_button.png');
+  background-size: calc(100% * 256 / 136) calc(100% * 128 / 106);
+}
+
+.gt-input {
+  user-select: text;
+  -webkit-user-select: text;
+  width: 100%;
+  background: rgba(8, 28, 46, 0.9);
+  border: 2px solid #82d8ff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.65);
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: var(--gt-font);
+  font-size: 15px;
+  font-weight: 700;
+  text-shadow: var(--gt-stroke);
+  padding: 7px 10px;
+  outline: none;
+}
+
+.gt-input:focus {
+  border-color: #ffe45e;
+}
+
+/* --- FULLSCREEN MENU OVERLAYS (LOGIN / WORLD SELECT) --- */
+.screen-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  pointer-events: auto;
+  background: radial-gradient(circle at center, rgba(8, 30, 52, 0.12) 0%, rgba(5, 18, 34, 0.52) 100%);
+}
+
+.world-select-backdrop {
+  background-color: #0b2b3d;
+  background-image: url('/assets/gt/ui/generic_menu.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: max(100vw, calc(100vh * 1024 / 768)) max(100vw, calc(100vh * 1024 / 768));
+}
+
+.logo-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.gt-title-logo {
+  width: min(430px, 84vw);
+  aspect-ratio: 1024 / 404;
+  background-image: url('/assets/gt/ui/game_title.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% calc(100% * 512 / 404);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.65));
+}
+
+.logo-sub {
+  margin-top: 2px;
+  font-size: 14px;
+  color: #fff699;
+}
+
+.login-card {
+  width: min(510px, 95vw);
+}
+
+.login-grid {
+  display: grid;
+  grid-template-columns: 1fr 128px;
+  gap: 14px;
+  align-items: center;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  color: #c7ecff;
+  margin-bottom: 4px;
+}
+
+.skin-row {
+  display: flex;
+  gap: 7px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.skin-swatch {
+  width: 30px;
+  height: 22px;
+  border-radius: 4px;
+  border: 2px solid #091c2e;
+  cursor: pointer;
+  position: relative;
+}
+
+.skin-swatch.active::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background-image: url('/assets/gt/ui/skin_selected_marker.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(100% * 128 / 102) calc(100% * 128 / 72);
+  pointer-events: none;
+}
+
+.preview-box {
+  background: rgba(9, 32, 54, 0.72);
+  border: 2px solid #7cd4ff;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-strip {
+  margin-top: 12px;
+  padding: 6px 10px;
+  background: rgba(8, 28, 46, 0.68);
+  border: 1px solid rgba(138, 216, 255, 0.45);
+  border-radius: 5px;
+  font-size: 12px;
+  color: #d4f1ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.error-banner {
+  background: rgba(185, 34, 34, 0.9);
+  border: 2px solid #ffa3a3;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #fff2f2;
+}
+
+.world-select-card {
+  width: min(690px, 96vw);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.world-enter-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.worlds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+  gap: 8px;
+  overflow-y: auto;
+  max-height: 280px;
+  padding: 8px;
+  background: rgba(7, 26, 44, 0.68);
+  border: 2px solid #6ac8ff;
+  border-radius: 6px;
+}
+
+.world-pill {
+  font-family: var(--gt-font);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: var(--gt-stroke);
+  background-color: rgba(34, 118, 168, 0.85);
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 7px 10px 10px 7px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 7px 10px 10px 7px stretch;
+  padding: 4px 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+
+.world-pill:hover {
+  filter: brightness(1.14);
+}
+
+.world-pill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.world-count-badge {
+  background: #27b53e;
+  border: 1px solid #b5ffbf;
+  border-radius: 4px;
+  padding: 0 6px;
+  font-size: 12px;
+}
+
+.world-pill-sub {
+  font-size: 11px;
+  color: #d1eeff;
+}
+
+/* --- 100% AUTHENTIC GROWTOPIA TOP HUD --- */
+.hud-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6px 8px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Full-width Top Chat Console with bottom handle */
+.hud-chat-box {
+  position: relative;
+  flex: 1;
+  max-width: min(760px, calc(100vw - 72px));
+  pointer-events: auto;
+  background-color: rgba(14, 52, 82, 0.72);
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 6px 9px 9px 6px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 6px 9px 9px 6px stretch;
+  padding: 3px 6px 6px 6px;
+}
+
+.chat-log {
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.35;
+  transition: height 0.14s ease;
+  height: 38px;
+}
+
+.chat-log.expanded {
+  height: 140px;
+}
+
+.chat-log.collapsed {
+  height: 20px;
+}
+
+.chat-line {
+  margin-bottom: 2px;
+  word-break: break-word;
+}
+
+/* Authentic handle_horizontal.png centered on bottom edge of chat box */
+.gt-chat-handle {
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 18px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url('/assets/gt/ui/handle_horizontal.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(100% * 128 / 88) calc(100% * 32 / 25);
+  z-index: 2;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.45));
+}
+
+.gt-chat-handle:hover {
+  filter: brightness(1.15) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.45));
+}
+
+/* Top-Right Column (Menu button, Chat button, Gems) */
+.hud-top-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  pointer-events: auto;
+  padding-right: 2px;
+}
+
+/* Authentic bare Gems Display (number on left, red gem icon on right!) */
+.gt-gems-display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.gt-gem-number {
+  font-family: var(--gt-font);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: var(--gt-stroke);
+}
+
+.gt-gem-icon {
+  width: 22px;
+  height: 22px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Floating Chat Input Bar */
+.hud-chat-input-bar {
+  position: absolute;
+  top: 56px;
+  left: 8px;
+  width: min(520px, calc(100vw - 72px));
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-style: solid;
+  border-width: 6px 9px 9px 6px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 6px 9px 9px 6px stretch;
+  background-color: rgba(14, 52, 82, 0.95);
+  pointer-events: auto;
+  z-index: 25;
+}
+
+.hud-chat-input-bar.open {
+  display: flex;
+}
+
+.chat-input {
+  user-select: text;
+  -webkit-user-select: text;
+  flex: 1;
+  background: rgba(8, 28, 46, 0.88);
+  border: 2px solid #82d8ff;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: var(--gt-font);
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: var(--gt-stroke);
+  padding: 5px 8px;
+  outline: none;
+}
+
+.chat-input:focus {
+  border-color: #ffe45e;
+}
+
+/* --- 100% AUTHENTIC GROWTOPIA BOTTOM HUD (HOTBAR & DRAWER) --- */
+.hud-bottom {
+  position: absolute;
+  bottom: max(10px, env(safe-area-inset-bottom, 10px));
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Hotbar Wrapper with handle_horizontal.png centered on top */
+.hotbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  margin-bottom: 2px;
+}
+
+.gt-drawer-handle {
+  width: 88px;
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin-bottom: -4px;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url('/assets/gt/ui/handle_horizontal.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(100% * 128 / 88) calc(100% * 32 / 25);
+  z-index: 2;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+.gt-drawer-handle:hover {
+  filter: brightness(1.15) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+.gt-drawer-handle:active {
+  transform: translateY(1px);
+}
+
+/* 4-Slot Hotbar in gui_box.png frame */
+.hotbar-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-style: solid;
+  border-width: 6px 9px 9px 6px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 6px 9px 9px 6px stretch;
+  background-color: rgba(14, 52, 82, 0.88);
+  image-rendering: pixelated;
+}
+
+.hotbar-slot {
+  width: clamp(52px, 7.5vh, 60px);
+  height: clamp(52px, 7.5vh, 60px);
+  background-image: url('/assets/gt/ui/itembox_blue.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: transform 0.05s ease, filter 0.05s ease;
+}
+
+.hotbar-slot:hover {
+  filter: brightness(1.1);
+}
+
+/* Active / Selected Hotbar Slot: Bright GREEN itembox from row 1 col 0! */
+.hotbar-slot.active {
+  background-image: url('/assets/gt/ui/itembox_green.png');
+}
+
+.hotbar-slot:not(.has-item) {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.slot-count {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-family: var(--gt-font);
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: var(--gt-stroke);
+  z-index: 2;
+}
+
+/* 10-Column Backpack Drawer Grid + Sidebar Buttons */
+.backpack-drawer {
+  display: none;
+  width: min(840px, 98vw);
+  padding: 5px 6px;
+  margin-bottom: 4px;
+  border-style: solid;
+  border-width: 7px 10px 10px 7px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 7px 10px 10px 7px stretch;
+  background-color: rgba(14, 52, 82, 0.94);
+  pointer-events: auto;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.backpack-drawer.open {
+  display: flex;
+}
+
+.drawer-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+  max-height: 130px;
+  overflow-y: auto;
+  padding: 2px;
+}
+
+.drawer-slot {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 52px;
+  background-image: url('/assets/gt/ui/itembox_blue.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.drawer-slot:hover {
+  filter: brightness(1.1);
+}
+
+.drawer-slot.active {
+  background-image: url('/assets/gt/ui/itembox_green.png');
+}
+
+.drawer-slot.equipped {
+  background-image: url('/assets/gt/ui/itembox_purple.png');
+}
+
+.drawer-slot.empty {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.drawer-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 80px;
+  justify-content: flex-start;
+}
+
+.drawer-btn {
+  width: 100%;
+  padding: 6px 0;
+  font-size: 13px;
+  font-family: var(--gt-font);
+  font-weight: 700;
+}
+
+/* --- 100% AUTHENTIC TOUCH CONTROLS (Left arrows & Right Jump/Punch) --- */
+.touch-controls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.touch-pad {
+  position: absolute;
+  bottom: calc(clamp(52px, 7.5vh, 60px) + 24px);
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.touch-pad-left {
+  left: max(10px, env(safe-area-inset-left));
+}
+
+.touch-pad-right {
+  right: max(10px, env(safe-area-inset-right));
+}
+
+.touch-btn {
+  pointer-events: auto;
+  touch-action: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.48;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.05s ease, opacity 0.05s ease;
+}
+
+.touch-btn.pressed {
+  opacity: 0.95;
+  transform: scale(0.95);
+}
+
+/* left_arrow.png & right_arrow.png: orig 135x95 inside 256x128 */
+.touch-left,
+.touch-right {
+  width: clamp(62px, 16vmin, 92px);
+  aspect-ratio: 135 / 95;
+  background-size: calc(100% * 256 / 135) calc(100% * 128 / 95);
+}
+
+.touch-left {
+  background-image: url('/assets/gt/ui/left_arrow.png');
+}
+
+.touch-right {
+  background-image: url('/assets/gt/ui/right_arrow.png');
+}
+
+/* jump_icon.png: orig 101x98 inside 128x128 | punch_icon.png: orig 100x98 inside 128x128 */
+.touch-jump,
+.touch-punch {
+  width: clamp(62px, 15vmin, 88px);
+  aspect-ratio: 101 / 98;
+  background-size: calc(100% * 128 / 101) calc(100% * 128 / 98);
+}
+
+.touch-jump {
+  background-image: url('/assets/gt/ui/jump_icon.png');
+}
+
+.touch-punch {
+  background-image: url('/assets/gt/ui/punch_icon.png');
+  background-size: calc(100% * 128 / 100) calc(100% * 128 / 98);
+}
+
+/* --- MODAL DIALOGS (STORE, RECIPES, WRENCH, PAUSE) --- */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 14, 26, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  pointer-events: auto;
+  z-index: 40;
+}
+
+.modal-card {
+  width: min(720px, 95vw);
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body-scroll {
+  overflow-y: auto;
+  max-height: 62vh;
+  padding-right: 4px;
+}
+
+.store-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 9px;
+}
+
+.store-item-card {
+  background: rgba(9, 32, 54, 0.78);
+  border: 2px solid #74ccff;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.inspector-icon-box {
+  width: 48px;
+  height: 48px;
+  background-image: url('/assets/gt/ui/itembox_gray.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.recipe-row {
+  background: rgba(9, 32, 54, 0.75);
+  border: 2px solid #6ac4ff;
+  border-radius: 6px;
+  padding: 7px 10px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.toast-banner {
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(14, 52, 82, 0.94);
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 7px 10px 10px 7px;
+  border-image: url('/assets/gt/ui/gui_box.png') 8 11 11 8 fill / 7px 10px 10px 7px stretch;
+  padding: 4px 14px;
+  font-size: 14px;
+  color: #fff6a6;
+  pointer-events: none;
+  z-index: 60;
+}
+
+@media (max-width: 600px) {
+  .drawer-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
